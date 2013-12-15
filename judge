@@ -1,0 +1,11 @@
+#! /opt/local/bin/ruby2.0
+
+number = ARGV[0]
+testcase = ARGV[1]
+
+`c++ #{number}.cpp -o #{number}.out -O2`
+
+(testcase == -1 ? [1..5] : [testcase]).each do |i|
+  `./#{number}.out < inputfile > out_#{number}_#{i}.txt`
+end
+
