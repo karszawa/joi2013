@@ -18,15 +18,15 @@ int main()
 		int expense;
 		cin >> expense;
 
-		for(int i = 0; ; i++) {
-			if(expenses[i] <= expense) {
-				votes[i]++;
+		for(int j = 0; ; j++) {
+			if(expenses[j] <= expense) {
+				votes[j]++;
 				break;
 			}
 		}
 	}
 
-	int best = 0, vote = 0;
+	int best = 1, vote = votes[0];
 	for(int i = 1; i < N; i++) {
 		if(vote < votes[i]) {
 			vote = votes[i];
